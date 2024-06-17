@@ -1,6 +1,9 @@
 
 # Les Chroniques de Lyra
 
+![Lyra](./public/images/lyra_world.jpg)
+
+
 Bienvenue dans **Les Chroniques de Lyra**, un projet immersif qui combine aventure fantastique et introspection personnelle. Ce projet est destiné aux personnes en reconversion professionnelle et aux élèves cherchant à découvrir leur véritable quête et passion dans la vie.
 
 ## Description du Projet
