@@ -24,7 +24,7 @@ export default function Quest() {
       <p className="mb-4">{story}</p>
       
       <div className="flex">
-        <div className="w-1/3">
+        <div className="w-2/5">
           <Spline
             scene="https://prod.spline.design/3azTpDS42ekjpaj5/scene.splinecode" 
             style={{ width: '100%', height: '100%' }}

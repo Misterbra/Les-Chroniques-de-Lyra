@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 import { setName, setApiProvider } from '../store/userSlice';
@@ -11,6 +11,8 @@ export default function Home() {
   const [apiKey, setApiKey] = useState('');
   const router = useRouter();
   const dispatch = useDispatch();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,15 +21,33 @@ export default function Home() {
     router.push('/quest');
   };
 
+  const handleTogglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
     <div className="container text-white p-6 bg-gray-900 rounded-lg shadow-lg">
       <h1 className="text-5xl font-bold mb-6 text-center">Bienvenue dans les Chroniques de Lyra</h1>
       
       <div className="mb-8 text-center">
-        <video width="100%" height="auto" controls>
+        <video ref={videoRef} width="100%" height="auto">
           <source src="/Clip_lyra.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+      </div>
+
+      <div className="text-center mb-4">
+        <label className="switch">
+          <input type="checkbox" className="input__check" checked={isPlaying} onChange={handleTogglePlay} />
+          <span className="slider"></span>
+        </label>
       </div>
 
       <div className="mb-8 text-lg leading-relaxed text-center italic">
