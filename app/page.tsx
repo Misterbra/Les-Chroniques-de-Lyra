@@ -23,6 +23,13 @@ export default function Home() {
     <div className="container text-white p-6 bg-gray-900 rounded-lg shadow-lg">
       <h1 className="text-5xl font-bold mb-6 text-center">Bienvenue dans les Chroniques de Lyra</h1>
       
+      <div className="mb-8 text-center">
+        <video width="100%" height="auto" controls>
+          <source src="/Clip_lyra.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       <div className="mb-8 text-lg leading-relaxed text-center italic">
         <p className="mb-4">
           Les Chroniques de Lyra est un projet qui mélange aventure fantastique et introspection personnelle. 
@@ -50,7 +57,7 @@ export default function Home() {
           />
         </div>
         <div>
-          <label className="block text-lg">Choisissez votre fournisseur d'API :</label>
+          <label className="block text-lg">Choisissez votre fournisseur d&apos;API :</label>
           <select
             value={apiProvider}
             onChange={(e) => setApiProviderState(e.target.value)}
@@ -74,7 +81,7 @@ export default function Home() {
           </div>
         )}
         <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
-          Commencer l'aventure
+          Commencer l&apos;aventure
         </button>
       </form>
     </div>

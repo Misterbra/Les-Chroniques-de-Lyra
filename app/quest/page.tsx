@@ -5,9 +5,10 @@ import { useSelector } from 'react-redux';
 import Chat from '../../components/Chat';
 import YouTubeBackground from '../../components/YouTubeBackground';
 import Spline from '@splinetool/react-spline';
+import { RootState } from '../../store'; // Importez RootState depuis votre store
 
 export default function Quest() {
-  const user = useSelector((state) => state.user.name);
+  const user = useSelector((state: RootState) => state.user.name);
   const [story, setStory] = useState('');
 
   useEffect(() => {

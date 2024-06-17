@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function History() {
   return (
     <div className="container text-white p-6 bg-gray-900 rounded-lg shadow-lg">
-      <h1 className="text-5xl font-bold mb-6 text-center">L'Histoire de Lyra</h1>
+      <h1 className="text-5xl font-bold mb-6 text-center">L&apos;Histoire de Lyra</h1>
       
       <div className="mb-8">
         <p className="mb-4 text-lg leading-relaxed">
@@ -27,7 +27,7 @@ export default function History() {
       <ul className="list-disc list-inside mb-8 text-lg leading-relaxed">
         <li className="mb-4">
           <strong>La Vallée des Miroirs :</strong> 
-          Une vallée enchantée où chaque miroir reflète une facette de l'âme. Les voyageurs doivent répondre à des questions introspectives pour avancer.
+          Une vallée enchantée où chaque miroir reflète une facette de l&apos;âme. Les voyageurs doivent répondre à des questions introspectives pour avancer.
           <Image 
             src="/images/valley_of_mirrors.jpg" // Assurez-vous d'avoir cette image dans le dossier public/images
             alt="La Vallée des Miroirs"
@@ -60,7 +60,7 @@ export default function History() {
         </li>
         <li className="mb-4">
           <strong>Le Temple des Étoiles :</strong> 
-          Un temple sacré où l'on médite et communique avec les étoiles pour recevoir des visions du futur.
+          Un temple sacré où l&apos;on médite et communique avec les étoiles pour recevoir des visions du futur.
           <Image 
             src="/images/temple_of_stars.jpg" // Assurez-vous d'avoir cette image dans le dossier public/images
             alt="Le Temple des Étoiles"
@@ -82,7 +82,7 @@ export default function History() {
       <h2 className="text-4xl font-bold mb-4">Personnages Clés</h2>
       <ul className="list-disc list-inside mb-8 text-lg leading-relaxed">
         <li className="mb-4">
-          <strong>Elyan :</strong> L'Ancien Sage et guide spirituel.
+          <strong>Elyan :</strong> L&apos;Ancien Sage et guide spirituel.
           <Image 
             src="/images/Elyan.jpg" // Assurez-vous d'avoir cette image dans le dossier public/images
             alt="Orion"
@@ -112,7 +112,7 @@ export default function History() {
           />
         </li>
         <li className="mb-4">
-          <strong>Le Corrupteur Éternel :</strong> L'antagoniste principal, une entité obscure qui cherche à détruire toute lumière et espoir.
+          <strong>Le Corrupteur Éternel :</strong> L&apos;antagoniste principal, une entité obscure qui cherche à détruire toute lumière et espoir.
           <Image 
             src="/images/corrupteur_eternel.jpg" // Assurez-vous d'avoir cette image dans le dossier public/images
             alt="Le Corrupteur Éternel"
@@ -122,7 +122,7 @@ export default function History() {
           />
         </li>
         <li className="mb-4">
-          <strong>L'Élu :</strong> Un héros mystérieux dont le visage est caché, symbolisant chaque utilisateur. 
+          <strong>L&apos;Élu :</strong> Un héros mystérieux dont le visage est caché, symbolisant chaque utilisateur. 
           <Image 
             src="/images/hero.jpg" // Assurez-vous d'avoir cette image dans le dossier public/images
             alt="L'Élu"

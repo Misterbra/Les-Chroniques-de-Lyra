@@ -5,7 +5,8 @@ const store = configureStore({
   reducer: {
     user: userReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(),
 });
 
 // Définir RootState pour l'utiliser dans useSelector

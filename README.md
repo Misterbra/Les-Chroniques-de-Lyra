@@ -26,55 +26,64 @@ Suivez ces étapes pour installer et exécuter le projet localement :
 
 ### Cloner le dépôt
 
-sh
 git clone https://github.com/votre-utilisateur/les-chroniques-de-lyra.git
 cd les-chroniques-de-lyra
-Installer les dépendances
+
+### Installer les dépendances
 Utilisez npm ou yarn pour installer les dépendances :
 
-sh
-Copier le code
+
 npm install
-# ou
+#### ou
 yarn install
 
 ### Configuration
 Assurez-vous d'avoir un fichier .env à la racine du projet pour les clés API et autres configurations nécessaires. Voici un exemple de fichier .env :
 
-env
-Copier le code
+
 NEXT_PUBLIC_API_KEY=your-api-key
 NEXT_PUBLIC_API_PROVIDER=llama3 # ou chatgpt
 Lancer LM Studio
-Si vous utilisez Llama3 avec LM Studio, assurez-vous de lancer LM Studio avant de démarrer l'application. Voici les étapes pour démarrer LM Studio :
+Si vous utilisez Llama3 avec LM Studio, assurez-vous de lancer LM Studio avant de démarrer l'application. 
+
+### Voici les étapes pour démarrer LM Studio :
 
 Téléchargez et installez LM Studio depuis LM Studio.
 Configurez LM Studio avec le modèle Meta-Llama-3-8B-Instruct-GGUF.
 Lancez LM Studio et assurez-vous qu'il écoute sur le port 1234 (ou configurez le port dans le fichier .env).
 Lancer l'application
-Pour démarrer l'application en mode développement, exécutez :
 
-sh
-Copier le code
+
+### Pour démarrer l'application en mode développement, exécutez :
+
+
 npm run dev
-# ou
+#### ou
 yarn dev
 Ouvrez http://localhost:3000 pour voir l'application dans votre navigateur.
 
 ### Utilisation
 Page d'accueil : Entrez votre nom et choisissez votre fournisseur d'API pour commencer l'aventure.
+
 Quêtes : Interagissez avec Elyan pour explorer vos passions et découvrir des missions significatives.
+
 Profil : Suivez vos progrès et les quêtes que vous avez découvertes.
 Contribution
+
 Les contributions sont les bienvenues ! Si vous souhaitez contribuer, veuillez suivre ces étapes :
 
 Forkez le projet.
 Créez une branche pour votre fonctionnalité (git checkout -b feature/ma-fonctionnalité).
+
 Commitez vos modifications (git commit -m 'Ajouter ma fonctionnalité').
+
 Poussez vers la branche (git push origin feature/ma-fonctionnalité).
+
 Ouvrez une Pull Request.
+
 Auteur
 MisterBra - Développeur principal - Votre Profil GitHub
+
 License
 Ce projet est sous licence MIT - voir le fichier LICENSE pour plus de détails.
 

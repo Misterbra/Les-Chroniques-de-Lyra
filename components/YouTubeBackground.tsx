@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+/// <reference types="youtube" />
+
 const YouTubeBackground = ({ videoId }: { videoId: string }) => {
   const [player, setPlayer] = useState<YT.Player | null>(null);
   const [playing, setPlaying] = useState(true);
@@ -31,7 +33,7 @@ const YouTubeBackground = ({ videoId }: { videoId: string }) => {
             event.target.setVolume(10); // Set the volume to a low level if desired
             event.target.playVideo(); // Ensure video starts playing
           },
-          onError: (event: YT.PlayerErrorEvent) => {
+          onError: (event: YT.OnErrorEvent) => {
             console.error('YouTube Player error:', event.data); // Error log
           },
         },
