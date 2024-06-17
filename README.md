@@ -42,12 +42,8 @@ yarn install
 ```
 
 ### Configuration
-Assurez-vous d'avoir un fichier .env à la racine du projet pour les clés API et autres configurations nécessaires. Voici un exemple de fichier .env :
-
-```env
-NEXT_PUBLIC_API_KEY=your-api-key
-NEXT_PUBLIC_API_PROVIDER=llama3 # ou chatgpt
-```
+Pas besoin d'avoir un fichier .env à la racine du projet pour les clés API et autres configurations.
+Utiliser votre clé OpenAI directement ou utiliser un modèle local.
 
 ### Lancer LM Studio
 Si vous utilisez Llama3 avec LM Studio, assurez-vous de lancer LM Studio avant de démarrer l'application. 
