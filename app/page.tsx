@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 import { setName, setApiProvider } from '../store/userSlice';
@@ -9,10 +9,9 @@ export default function Home() {
   const [name, setNameState] = useState('');
   const [apiProvider, setApiProviderState] = useState('llama3');
   const [apiKey, setApiKey] = useState('');
+  const [playing, setPlaying] = useState(true);
   const router = useRouter();
   const dispatch = useDispatch();
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,31 +20,27 @@ export default function Home() {
     router.push('/quest');
   };
 
-  const handleTogglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
+  const togglePlayPause = () => {
+    const videoElement = document.getElementById('video') as HTMLVideoElement;
+    if (playing) {
+      videoElement.pause();
+    } else {
+      videoElement.play();
     }
+    setPlaying(!playing);
   };
 
   return (
     <div className="container text-white p-6 bg-gray-900 rounded-lg shadow-lg">
       <h1 className="text-5xl font-bold mb-6 text-center">Bienvenue dans les Chroniques de Lyra</h1>
       
-      <div className="mb-8 text-center">
-        <video ref={videoRef} width="100%" height="auto">
+      <div className="mb-8 text-center relative">
+        <video id="video" width="100%" height="auto">
           <source src="/Clip_lyra.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div>
-
-      <div className="text-center mb-4">
-        <label className="switch">
-          <input type="checkbox" className="input__check" checked={isPlaying} onChange={handleTogglePlay} />
+        <label className="switch absolute bottom-4 right-4">
+          <input type="checkbox" className="input__check" onChange={togglePlayPause} checked={playing} />
           <span className="slider"></span>
         </label>
       </div>
