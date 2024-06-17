@@ -84,7 +84,7 @@ Les contributions sont les bienvenues ! Si vous souhaitez contribuer, veuillez s
 5. Ouvrez une Pull Request.
 
 ### Auteur
-MisterBra - Développeur principal - [Votre Profil GitHub](https://github.com/Misterbra)
+MisterBra - Développeur principal - [Profil GitHub](https://github.com/Misterbra)
 
 ### License
 Ce projet est sous licence MIT - voir le fichier LICENSE pour plus de détails.
