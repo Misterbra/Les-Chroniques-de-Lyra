@@ -35,7 +35,7 @@ export default function Home() {
       <h1 className="text-5xl font-bold mb-6 text-center">Bienvenue dans les Chroniques de Lyra</h1>
       
       <div className="mb-8 text-center relative">
-        <video id="video" width="100%" height="auto" controls>
+        <video id="video" width="100%" height="auto">
           <source src="/Clip_Lyra.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
