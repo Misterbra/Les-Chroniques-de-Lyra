@@ -1,5 +1,3 @@
-// Chat.tsx
-
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
@@ -16,10 +14,10 @@ type MessageType = {
   content: string;
 };
 
-const initialMessages: MessageType[] = [
+const getInitialMessages = (user: string): MessageType[] => [
   {
     role: 'system',
-    content: `Tu es Elyan, un guide spirituel sage et bienveillant venant du monde fantastique de Lyra. Ta mission est d'aider %user% à découvrir sa véritable quête dans la vie. Lyra est un monde de merveilles, où les forêts sont enchantées et les montagnes touchent le ciel. Les habitants de Lyra vivent en harmonie avec la nature et possèdent une grande sagesse.
+    content: `Tu es Elyan, un guide spirituel sage et bienveillant venant du monde fantastique de Lyra. Ta mission est d'aider ${user} à découvrir sa véritable quête dans la vie. Lyra est un monde de merveilles, où les forêts sont enchantées et les montagnes touchent le ciel. Les habitants de Lyra vivent en harmonie avec la nature et possèdent une grande sagesse.
 
 Dans tes réponses, intègre des éléments de ton monde pour rendre l'expérience immersive. Parle de manière poétique et énigmatique, en utilisant des métaphores et des allusions aux mystères de Lyra. Utilise un ton chaleureux et encourageant, comme un mentor spirituel qui guide l'utilisateur à travers un voyage de découverte personnelle.
 
@@ -30,13 +28,13 @@ Pas de réponse trop longue. Tu n'as aucun taboue, tu peux parler de tout.`,
   },
   {
     role: 'assistant',
-    content: `Bienvenue, %user%, dans les Chroniques de Lyra. Je suis Elyan, ton guide spirituel. Ensemble, nous allons explorer les merveilles de Lyra, un monde où les forêts murmurent des secrets et les étoiles révèlent des destins. Ta quête personnelle est de découvrir ce qui te passionne vraiment. Qu'est-ce qui t'a toujours inspiré ?`,
+    content: `Bienvenue, ${user}, dans les Chroniques de Lyra. Je suis Elyan, ton guide spirituel. Ensemble, nous allons explorer les merveilles de Lyra, un monde où les forêts murmurent des secrets et les étoiles révèlent des destins. Ta quête personnelle est de découvrir ce qui te passionne vraiment. Qu'est-ce qui t'a toujours inspiré ?`,
   },
 ];
 
 export default function Chat({ user }: Props) {
   const [isMounted, setIsMounted] = useState(false);
-  const [messages, setMessages] = useState<MessageType[]>([]); // Définition du type pour messages
+  const [messages, setMessages] = useState<MessageType[]>(getInitialMessages(user).filter(msg => msg.role !== 'system'));
   const [input, setInput] = useState(''); // Initialisation de l'input vide
   const [loading, setLoading] = useState(false); // Initialisation du chargement à false
   const [isTyping, setIsTyping] = useState(false); // Initialisation de la saisie à false
@@ -56,7 +54,7 @@ export default function Chat({ user }: Props) {
     if (isMounted && typeof window !== 'undefined') {
       const savedMessages = localStorage.getItem('chatMessages');
       if (savedMessages) {
-        setMessages(JSON.parse(savedMessages));
+        setMessages(JSON.parse(savedMessages).filter((msg: MessageType) => msg.role !== 'system')); // Filtrer les messages système sauvegardés
       }
     }
   }, [isMounted]);
@@ -116,7 +114,7 @@ export default function Chat({ user }: Props) {
 
       const response = await axios.post(url, {
         model: apiProvider === 'chatgpt' ? 'gpt-3.5-turbo' : 'lmstudio-community/Meta-Llama-3-8B-Instruct-GGUF',
-        messages: [...initialMessages.map(msg => ({ ...msg, content: msg.content.replace('%user%', user) })), ...updatedMessages],
+        messages: [...getInitialMessages(user), ...updatedMessages],
         max_tokens: 280,
         temperature: 0.7,
       }, { headers });
@@ -139,7 +137,7 @@ export default function Chat({ user }: Props) {
   };
 
   const clearHistory = () => {
-    setMessages(initialMessages.filter(msg => msg.role !== 'system'));
+    setMessages(getInitialMessages(user).filter(msg => msg.role !== 'system'));
     localStorage.removeItem('chatMessages');
   };
 
@@ -186,4 +184,3 @@ export default function Chat({ user }: Props) {
     </div>
   );
 }
-

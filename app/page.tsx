@@ -78,7 +78,7 @@ export default function Home() {
             onChange={(e) => setApiProviderState(e.target.value)}
             className="bg-gray-700 text-white p-2 rounded w-full"
           >
-            <option value="llama3">Tous les modèles en local avec LM Studio | Port : 1234</option>
+            <option value="llama3">Llama3 en local avec LM Studio | Port : 1234</option>
             <option value="chatgpt">ChatGPT (API)</option>
           </select>
         </div>
