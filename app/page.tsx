@@ -78,7 +78,7 @@ export default function Home() {
             onChange={(e) => setApiProviderState(e.target.value)}
             className="bg-gray-700 text-white p-2 rounded w-full"
           >
-            <option value="llama3">Meta-Llama-3-8B-Instruct-GGUF By LM Studio | Port : 1234 (Local)</option>
+            <option value="llama3">Tous les modèles en local avec LM Studio | Port : 1234</option>
             <option value="chatgpt">ChatGPT (API)</option>
           </select>
         </div>
@@ -99,6 +99,10 @@ export default function Home() {
           Commencer l&apos;aventure
         </button>
       </form>
+      <p className="mt-4 text-center">
+      Download <a href="https://lmstudio.ai/" target="_blank" style={{ color: '#FFFFFF', textDecoration: 'underline' }}>LM Studio</a>
+    </p>
+
     </div>
   );
 }
