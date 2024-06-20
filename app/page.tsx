@@ -10,6 +10,7 @@ export default function Home() {
   const [apiProvider, setApiProviderState] = useState('llama3');
   const [apiKey, setApiKey] = useState('');
   const [playing, setPlaying] = useState(true);
+  const [showTutorial, setShowTutorial] = useState(false);
   const router = useRouter();
   const dispatch = useDispatch();
 
@@ -100,58 +101,52 @@ export default function Home() {
         </button>
       </form>
 
-
       <div className="mt-4 text-center">
-        <button onClick={() => setShowTutorial(!showTutorial)} className="bg-gray-700 text-white px-4 py-2 rounded">
-          {showTutorial ? "Hide Tutorial" : "Show Tutorial"}
-        </button>
-      </div>
+  <button onClick={() => setShowTutorial(!showTutorial)} className="bg-gray-700 text-white px-4 py-2 rounded">
+    {showTutorial ? "Cacher le tutoriel" : "Afficher le tutoriel"}
+  </button>
+</div>
 
-      {showTutorial && (
-        <div className="mt-4 p-4 bg-gray-800 rounded-lg">
-          <h2 className="text-2xl font-bold mb-4">How to Set Up Llama3 with LM Studio</h2>
-          <ol className="list-decimal list-inside text-lg leading-relaxed">
-            <li className="mb-2">
-              <strong>Download LM Studio:</strong> Go to the <a href="https://lmstudio.ai/" target="_blank" className="text-blue-400 underline">LM Studio website</a> and download the latest version of the software. LM Studio allows you to run AI models on your local computer for free.
-            </li>
-            <li className="mb-2">
-              <strong>Install LM Studio:</strong> Follow the installation instructions provided on the website to set up LM Studio on your computer.
-            </li>
-            <li className="mb-2">
-              <strong>Launch LM Studio:</strong> Open LM Studio and navigate to the server setup section.
-            </li>
-            <li className="mb-2">
-              <strong>Set Up Llama3:</strong> Select Llama3 as the model you want to use. Make sure to configure the port to 1234. This allows you to run the AI model locally on your computer without any cost.
-            </li>
-            <li className="mb-2">
-              <strong>Start the Server:</strong> Click the &apos;Start Server&apos; button to launch the Llama3 server. You should see a confirmation message indicating that the server is running.
-            </li>
-            <li className="mb-2">
-              <strong>Connect Your Application:</strong> In the application setup, select &apos;Llama3 locally with LM Studio&apos; and ensure the port is set to 1234.
-            </li>
-          </ol>
-          <h2 className="text-2xl font-bold mb-4 mt-8">Using ChatGPT API</h2>
-          <ol className="list-decimal list-inside text-lg leading-relaxed">
-            <li className="mb-2">
-              <strong>Sign Up for OpenAI:</strong> Go to the <a href="https://beta.openai.com/signup/" target="_blank" className="text-blue-400 underline">OpenAI website</a> and sign up for a free API key.
-            </li>
-            <li className="mb-2">
-              <strong>Get Your API Key:</strong> Once you have signed up, you will receive an API key that you can use to access the ChatGPT API.
-            </li>
-            <li className="mb-2">
-              <strong>Enter API Key:</strong> In the form above, select &apos;ChatGPT (API)&apos; and enter your API key. This allows you to use the ChatGPT model without needing a powerful computer, as all computations are done on OpenAI&lsquo;s servers.
-            </li>
-          </ol>
-          <p className="mt-4">
-            Both options are free to use. Running Llama3 locally with LM Studio is ideal if you have a powerful computer and prefer to keep everything on your machine. Using the ChatGPT API is great if you want to save resources and let OpenAI handle the computations.
-          </p>
-        </div>
-      )}
-
-
-      <p className="mt-4 text-center">
-      Download <a href="https://lmstudio.ai/" target="_blank" style={{ color: '#FFFFFF', textDecoration: 'underline' }}>LM Studio</a>
+{showTutorial && (
+  <div className="mt-4 p-4 bg-gray-800 rounded-lg">
+    <h2 className="text-2xl font-bold mb-4">Comment configurer Llama3 avec LM Studio</h2>
+    <ol className="list-decimal list-inside text-lg leading-relaxed">
+      <li className="mb-2">
+        <strong>Téléchargez LM Studio :</strong> Allez sur le <a href="https://lmstudio.ai/" target="_blank" className="text-blue-400 underline">site web de LM Studio</a> et téléchargez la dernière version du logiciel. LM Studio vous permet d&apos;exécuter des modèles d&apos;IA sur votre ordinateur local gratuitement.
+      </li>
+      <li className="mb-2">
+        <strong>Installez LM Studio :</strong> Suivez les instructions d&apos;installation fournies sur le site web pour configurer LM Studio sur votre ordinateur.
+      </li>
+      <li className="mb-2">
+        <strong>Lancez LM Studio :</strong> Ouvrez LM Studio et accédez à la section de configuration du serveur.
+      </li>
+      <li className="mb-2">
+        <strong>Configurez Llama3 :</strong> Sélectionnez Llama3 comme modèle que vous souhaitez utiliser. Assurez-vous de configurer le port sur 1234. Cela vous permet d&apos;exécuter le modèle d&apos;IA localement sur votre ordinateur sans aucun coût.
+      </li>
+      <li className="mb-2">
+        <strong>Démarrez le serveur :</strong> Cliquez sur le bouton &apos;Démarrer le serveur&apos; pour lancer le serveur Llama3. Vous devriez voir un message de confirmation indiquant que le serveur est en cours d&apos;exécution.
+      </li>
+      <li className="mb-2">
+        <strong>Connectez votre application : </strong> Dans la configuration de l&apos;application, sélectionnez &apos;Llama3 localement avec LM Studio&apos; et assurez-vous que le port est réglé sur 1234.
+      </li>
+    </ol>
+    <h2 className="text-2xl font-bold mb-4 mt-8">Utilisation de l&apos;API ChatGPT</h2>
+    <ol className="list-decimal list-inside text-lg leading-relaxed">
+      <li className="mb-2">
+        <strong>Inscrivez-vous à OpenAI :</strong> Allez sur le <a href="https://beta.openai.com/signup/" target="_blank" className="text-blue-400 underline">site web d&apos;OpenAI</a> et inscrivez-vous pour obtenir une clé API gratuite.
+      </li>
+      <li className="mb-2">
+        <strong>Obtenez votre clé API :</strong> Une fois inscrit, vous recevrez une clé API que vous pouvez utiliser pour accéder à l&apos;API ChatGPT.
+      </li>
+      <li className="mb-2">
+        <strong>Entrez la clé API :</strong> Dans le formulaire ci-dessus, sélectionnez &apos;ChatGPT (API)&apos; et entrez votre clé API. Cela vous permet d&apos;utiliser le modèle ChatGPT sans avoir besoin d&apos;un ordinateur puissant, car tous les calculs sont effectués sur les serveurs d&apos;OpenAI.
+      </li>
+    </ol>
+    <p className="mt-4">
+      Les deux options sont gratuites. Exécuter Llama3 localement avec LM Studio est idéal si vous avez un ordinateur puissant et que vous préférez tout garder sur votre machine. Utiliser l&apos;API ChatGPT est parfait si vous voulez économiser des ressources et laisser OpenAI gérer les calculs.
     </p>
+  </div>
+)}
 
     </div>
   );
