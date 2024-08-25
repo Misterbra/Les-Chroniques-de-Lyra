@@ -13,7 +13,7 @@ const PathAnalyzer: React.FC = () => {
     setLoading(true);
     try {
       const journalText = journalEntries.map(entry => entry.content).join(' ');
-      const response = await axios.post('/api/analyze-path', {
+      const response = await axios.post('/api/analyzepath', {
         journal: journalText,
         traits: userTraits,
       });
