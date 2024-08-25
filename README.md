@@ -25,8 +25,6 @@ Suivez ces étapes pour installer et exécuter le projet localement :
 
 - Node.js (version 14 ou supérieure)
 - npm (version 6 ou supérieure) ou yarn
-- LM Studio (version spécifique pour l'API Llama3)
-- Compte OpenAI pour utiliser l'API ChatGPT (si nécessaire)
 
 ### Cloner le dépôt
 
@@ -45,16 +43,8 @@ yarn install
 ```
 
 ### Configuration
-Pas besoin d'avoir un fichier .env à la racine du projet pour les clés API et autres configurations.
-Utiliser votre clé OpenAI directement ou utiliser un modèle local.
+Un fichier .env à la racine du projet pour les clés API.
 
-### Lancer LM Studio
-Si vous utilisez Llama3 avec LM Studio, assurez-vous de lancer LM Studio avant de démarrer l'application. 
-
-Voici les étapes pour démarrer LM Studio :
-1. Téléchargez et installez LM Studio depuis LM Studio.
-2. Configurez LM Studio avec le modèle Meta-Llama-3-8B-Instruct-GGUF.
-3. Lancez LM Studio et assurez-vous qu'il écoute sur le port 1234 (ou configurez le port dans le fichier .env).
 
 ### Lancer l'application
 
@@ -69,7 +59,7 @@ yarn dev
 Ouvrez [http://localhost:3000](http://localhost:3000) pour voir l'application dans votre navigateur.
 
 ### Utilisation
-- **Page d'accueil** : Entrez votre nom et choisissez votre fournisseur d'API pour commencer l'aventure.
+- **Page d'accueil** : Entrez votre nom pour commencer l'aventure.
 - **Quêtes** : Interagissez avec Elyan pour explorer vos passions et découvrir des missions significatives.
 - **Profil** : Suivez vos progrès et les quêtes que vous avez découvertes.
 
