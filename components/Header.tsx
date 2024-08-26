@@ -12,8 +12,10 @@ export default function Header() {
     { href: '/', label: 'Accueil' },
     { href: '/quest', label: 'Ta Quête' },
     { href: '/profile', label: 'Profil' },
+    { href: '/map', label: 'Carte' },  // Nouveau lien
+    { href: '/journal', label: 'Journal' },  // Nouveau lien
     { href: '/history', label: 'Histoire' },
-    { href: '/pathanalyzer', label: 'Analyseur de Parcours' }, // Nouvel élément ajouté
+    { href: '/pathanalyzer', label: 'Analyseur de Parcours' },
   ];
 
   return (

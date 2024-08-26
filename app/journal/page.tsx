@@ -1,7 +1,8 @@
+"use client";
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addJournalEntry } from '../store/userSlice';
-import { RootState } from '../store';
+import { addJournalEntry } from '../../store/userSlice';
+import { RootState } from '../../store';
 
 const Journal: React.FC = () => {
   const [entry, setEntry] = useState('');
