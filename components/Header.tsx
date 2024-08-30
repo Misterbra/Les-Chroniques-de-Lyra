@@ -10,12 +10,12 @@ export default function Header() {
 
   const navItems = [
     { href: '/', label: 'Accueil' },
-    { href: '/quest', label: 'Ta Quête' },
+    { href: '/conversation', label: 'conversation' },
+    { href: '/map', label: 'Carte' }, 
+    { href: '/journal', label: 'Journal' }, 
     { href: '/profile', label: 'Profil' },
-    { href: '/map', label: 'Carte' },  // Nouveau lien
-    { href: '/journal', label: 'Journal' },  // Nouveau lien
-    { href: '/history', label: 'Histoire' },
-    { href: '/pathanalyzer', label: 'Analyseur de Parcours' },
+    { href: '/history', label: 'Histoire' }
+
   ];
 
   return (

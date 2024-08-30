@@ -3,10 +3,11 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
-import { setName } from '../store/userSlice';
+import { setName, setCity } from '@/store/userSlice';
 
 export default function Home() {
   const [name, setNameState] = useState('');
+  const [city, setCityState] = useState('');
   const [playing, setPlaying] = useState(true);
   const [showTutorial, setShowTutorial] = useState(false);
   const router = useRouter();
@@ -25,7 +26,8 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     dispatch(setName(name));
-    router.push('/quest');
+    dispatch(setCity(city));
+    router.push('/conversation');
   };
 
   const togglePlayPause = () => {
@@ -76,6 +78,17 @@ export default function Home() {
             id="name"
             value={name}
             onChange={(e) => setNameState(e.target.value)}
+            className="bg-gray-700 text-white p-2 rounded w-full"
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="city" className="block text-lg">Entre ta ville :</label>
+          <input
+            type="text"
+            id="city"
+            value={city}
+            onChange={(e) => setCityState(e.target.value)}
             className="bg-gray-700 text-white p-2 rounded w-full"
             required
           />
